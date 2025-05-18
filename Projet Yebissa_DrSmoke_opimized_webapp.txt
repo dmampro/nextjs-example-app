@@ -1,0 +1,368 @@
+Web App Yebissa - Prompt de développement complet
+
+Définition du projet
+
+Créer une application web progressive (PWA) nommée "Yebissa" ("Fais savoir" en lingala), optimisée pour
+smartphones, permettant aux citoyens de la République du Congo (+242) de signaler des incidents,
+problèmes ou situations anormales dans leur environnement quotidien, de façon anonyme ou identifiée.
+
+Caractéristiques techniques
+
+e Type d'application: Web App Progressive (PWA) responsive, optimisée mobile-first
+
+Compatibilité: Tous navigateurs modernes (Chrome, Safari, Firefox, Edge)
+
+Installation: Possibilité d'ajouter à l'écran d'accueil sur Android et iOS
+
+Fonctionnement hors ligne: Capacité de fonctionnement minimal sans connexion (mise en cache)
+
+Taille cible: <5MB pour le téléchargement initial
+e Performance: Temps de chargement <3s sur réseau 3G
+
+e Localisation: Spécifiquement optimisée pour Brazzaville, Pointe-Noire et Owando
+
+Architecture technique
+
+e Frontend:
+e Framework: React.js avec Next.js pour optimisation SEO et SSR
+
+e_ État global: React Context API + useReducer ou Redux Toolkit
+e_ Interface: TailwindCSS pour l'UI responsive + Headless UI pour composants accessibles
+
+e Cartes: Leaflet.js (open source) ou Google Maps API avec préchargement des données pour
+Brazzaville, Pointe-Noire et Owando
+
+e Backend:
+e Architecture: Serverless avec API RESTful
+
+e Services: Firebase ou Supabase (Auth, Database, Storage, Functions)
+e Base de données: Firestore (NoSQL) ou PostgreSQL via Supabase
+e Cache: Service Workers pour ressources statiques
+e Notifications: Web Push API + Firebase Cloud Messaging
+e Sécurité:
+e Authentification: JWT pour sessions + OAuth pour connexions sociales
+e_Chiffrement: HTTPS obligatoire
+e Validation: Validation côté client et serveur avec schémas Yup/Zod
+
+e Confidentialité: Option d'anonymisation complète des données utilisateur
+e Protection: Rate limiting, sanitisation des inputs, protection CSRF/XSS
+
+Interface utilisateur et expérience
+
+Design général
+e Palette de couleurs: Couleurs douces inspirées du drapeau de la République du Congo (vert, jaune,
+rouge)
+e Police principale: Inter ou Source Sans Pro (lisibilité optimale sur mobile)
+e Icônes: Système d'icônes cohérent et significatif pour une compréhension intuitive
+e Navigation: Bottom navigation bar sur mobile (plus accessible au pouce)
++ Mode sombre: Support du dark mode pour économiser la batterie
+
+e Accessibilité: Contraste élevé, taille de texte ajustable, support des lecteurs d'écran
+
+Écrans principaux
+
+Écran d'accueil / Onboarding:
+e Interface en français (Fr-CG)
+e Présentation rapide de l'app en 3 slides (objectif, anonymat, impact)
+e Option pour passer l'onboarding
+e Gestion des permissions (géolocalisation, notifications, appareil photo)
+e Sélection de la ville principale (Brazzaville, Pointe-Noire, Owando)
+2. Tableau de bord principal:
+e Carte interactive avec signalements géolocalisés
+e Liste chronologique des derniers signalements
+e Bouton d'action flottant (FAB) pour créer un nouveau signalement
+
+e Filtres rapides par catégorie et proximité
+
+3. Création de signalement:
+e Interface par étapes (stepper)
+
+e Sélection de catégorie avec icônes larges et claires
+e_ Champ de description avec dictée vocale
+
+e Upload de photo(s) avec compression automatique
+° _Toggle pour anonymat
+
+e Capture automatique de la position GPS
+
+4. Détail d'un signalement:
+e Photo(s) en en-tête
+Description complète
+
+Carte de localisation
+
+Boutons de confirmation communautaire
+
+e Section commentaires
+
+e Option de partage sur réseaux sociaux/messageries
+
+5. Profil/Paramètres:
+e Préférences de notifications
+
+e Choix de langue
+e Historique personnel de signalements
+e Option de contribution (don)
+
+e Paramètres de confidentialité
+
+Parcours utilisateur principal
+1. Ouverture de l'application
+2. Visualisation des signalements proches sur la carte ou dans la liste
+3. Création d'un nouveau signalement via le bouton FAB
+4. Sélection d'une catégorie
+5. Prise de photo ou description du problème
+6. Validation et envoi du signalement
+
+7. Notification de confirmation
+
+Fonctionnalités détaillées
+
+1. Système de Signalement
+
+e Catégories principales:
+e Infrastructure & Services (câble électrique, fuite d'eau, coupures, éclairage, incendie)
+
+e Voirie & Environnement {nids de poule, érosion, inondation, décharges sauvages)
+e Sécurité & Criminalité (kuluna/bandits, vols, abus policiers, activités illégales)
+e Justice & Droit (corruption, chantage, violence domestique, harcèlement)
+
+e Santé & Consommation (produits périmés, hygiène douteuse)
+
+e Processus de signalement:
+e Détection automatique de la ville (Brazzaville, Pointe-Noire, Owando)
+
+e Validation communautaire requise pour les signalements sensibles
+e Système de modération automatisée (filtre de contenu inapproprié)
+
+e Possibilité d'ajouter statut (nouveau, en cours, résolu)
+e Option de mise à jour du signalement par l'auteur
+
+2. Géolocalisation et cartographie
+e Carte interactive zoomable avec clusters pour zones denses
+e Filtrage géographique (rayon personnalisable)
+e Mode hors ligne avec données cartographiques minimales
+e Distinction visuelle des signalements par catégorie et statut
+e Support des adresses approximatives et points de repère
+
+e Focus sur les trois villes principales: Brazzaville, Pointe-Noire et Owando
+
+Préchargement des données cartographiques de ces trois villes pour utilisation offline
+
+3. Système de notifications
+e Sons différenciés selon la gravité
+e Notifications géolocalisées (uniquement pour la zone d'intérêt)
+e_Paramétrages fins par type d'incident
+e Notifications push web pour les navigateurs compatibles
+
+e Alertes critiques pour incidents majeurs (incendies, inondations)
+
+4. Système d'authentification et anonymat
+e Utilisation sans compte possible pour consultation
+e_ Inscription simplifiée (email ou Google)
+
+e Mode "témoin anonyme" avec cryptage renforcé
+
+Vérification d'identité optionnelle pour utilisateurs récurrents
+
+Option de suppression complète des données personnelles
+
+5. Validation communautaire
+e Système de votes positifs pour confirmer un signalement
+
+e Statut "en attente de confirmation" pour signalements sensibles
+
+Seuil adaptatif selon la catégorie (3-5 confirmations)
+
+Protection contre les abus de votes (anti-spam)
+
+Badge “témoin fiable" pour utilisateurs ayant fait des signalements confirmés
+
+6. Langue
+e Interface complète en français (Fr-CG) uniquement pour le moment
+
+e Adaptation aux expressions et termes locaux de la République du Congo
+° Support audio pour zones à faible alphabétisation
+
+e Structure technique permettant l'ajout futur d'autres langues si nécessaire
+
+7. Annonces communautaires
+e Section dédiée pour informations officielles
+e Filtrage par pertinence géographique
+e Vérification des sources pour annonces importantes
+e Catégories: décès, activités municipales, messages publics
+
+e Option d'abonnement par quartier/commune
+
+8. Analyse et statistiques
+
+e Tableau de bord de tendances visibles aux utilisateurs
+
+Points chauds par type d'incident
+
+Statistiques de résolution
+
+Temps de réponse moyen
+
+e_ Impact communautaire (nombre de personnes concernées)
+
+9. Mode économie de données
+
+e Compression automatique des images
+
+Chargement progressif du contenu
+
+Option "mode économie" réduisant la qualité des médias
+
+Mise en cache intelligente des données fréquemment consultées
+
+Synchronisation différée en cas de connexion limitée
+
+Considérations techniques spécifiques
+
+1. Performances sur appareils modestes
+e Lazy loading pour composants non-critiques
+e Bundle splitting pour chargement optimal
+e Compression des assets (images, CSS, JS)
+e Utilisation minimale de JavaScript côté client quand possible
+
+e Support navigateurs jusqu'à 2 versions majeures antérieures
+
+2. Consommation de batterie
+
+e Optimisation de la géolocalisation (basse fréquence)
+
+e Réduction des animations en mode économie d'énergie
+e Désactivation automatique des fonctions intensives sous seuil de batterie
+e Compression des requêtes réseau
+
+e Mise en cache agressive des données statiques
+
+3. Sécurité et modération
+
+e Filtrage automatique du contenu sensible/inapproprié
+
+Système de signalement de contenu abusif
+
+Validation en plusieurs étapes pour accusations graves
+
+Protection de l'identité des témoins vulnérables
+
+Audit de sécurité régulier
+
+4. Modèle de revenus
+
+e Section dons intégrée discrètement
+
+Support Mobile Money, PayPal, crypto
+
+Monétisation éthique par annonces communautaires
+
+Version "Yebissa Pro" pour institutions avec analytics avancés
+
+Partenariats potentiels avec services publics/municipalités
+
+Cas d'utilisation principaux
+
+Cas 1: Signalement d'un abus policier
+1. L'utilisateur ouvre l'application
+2. Appuie sur le bouton FAB "Nouveau signalement"
+3. Sélectionne la catégorie "Sécurité & Criminalité" puis "Abus policier"
+4. Active l'option "Mode anonyme" (activée par défaut pour cette catégorie)
+5. Prend une photo ou décrit la situation
+6. Le système demande confirmation et informe sur la procédure de validation
+7. Le signalement est marqué "En attente de validation communautaire"
+8. Après 4 confirmations par d'autres utilisateurs, le signalement devient public
+
+9. Une notification est envoyée quand une autorité répond au signalement
+
+Cas 2: Fuite d'eau dans la rue
+1. L'utilisateur détecte une fuite d'eau importante
+2. Ouvre l'application et crée un nouveau signalement
+3. Sélectionne "Infrastructure & Services" puis "Fuite d'eau"
+
+À, Prend une photo, ajoute une description et précise la gravité
+5. La géolocalisation automatique identifie l'emplacement exact
+
+6. Le système envoie le signalement directement (pas de validation requise)
+7. Les utilisateurs à proximité reçoivent une notification
+
+8. Le service concerné est notifié via l'interface partenaire
+
+9. Le statut est mis à jour quand le problème est résolu
+
+Cas 3: Objet trouvé
+1. Un jeune utilisateur trouve un objet perdu
+2. Il crée un signalement dans la catégorie "Sécurité & Criminalité" > "Objet trouvé"
+3. Il photographie l'objet (sans données sensibles visibles)
+4. Il indique le lieu de découverte et décrit l'objet
+5. Le système publie le signalement après vérification rapide
+6. Le propriétaire voit le signalement et contacte via le système de messagerie intégré
+
+7. Après récupération, le signalement est marqué comme "Résolu" puis archivé
+
+Standards de développement
+
+e Développement mobile-first avec approche responsive
+
+Utilisation d'API web modernes (Geolocation API, Web Push, IndexedDB)
+
+Tests automatisés (unit, integration, E2E avec Cypress/Playwright)
+
+e Progressive enhancement pour fonctionnalités avancées
+
+Intégration CI/CD pour déploiement continu
+
+MVP vs Version complète
+
+MVP (Minimum Viable Product)
+e _Signalement simple avec photo et géolocalisation
+e Filtrage basique par catégorie et localisation
+e Interface en français (Fr-CG) uniquement
+e Carte interactive basique pour Brazzaville, Pointe-Noire et Owando
+e Notifications simples
+
+e Mode anonyme
+
+Version complète
+
+e Toutes les fonctionnalités décrites précédemment
+
+e Intégration avec services municipaux
+Dashboard analytique avancé
+
+Validation communautaire sophistiquée
+
+Système de réputation
+
+Interface partenaires
+
+Métriques de succès
+
+e Nombre d'utilisateurs actifs mensuels
+
+Taux de résolution des signalements
+
+Temps moyen avant première réponse
+
+e Engagement communautaire (votes, commentaires)
+
+Qualité des données (précision, pertinence)
+
+Hébergement et infrastructure
+
+e Hébergement sur plateforme serverless (Vercel, Netlify)
+
+CDN pour distribution globale efficace
+
+Firebase/Supabase pour services backend
+
+Stratégie de scaling automatique
+
+Monitoring et alerting
+
+Ce prompt contient toutes les informations nécessaires pour développer une web app Yebissa complète
+et fonctionnelle. Les développeurs peuvent utiliser ces spécifications pour implémenter l'application sans
+avoir besoin d'informations supplémentaires sur l'architecture, les fonctionnalités ou l'expérience
+
+utilisateur visées.
