@@ -1,0 +1,790 @@
+YEBISSA APPLICATION DEVELOPMENT PROMPT FOR AI
+ENGINEERS
+
+PROJECT CONTEXT & MODEL SPECIFICATIONS
+
+This is an Al-to-Al communication prompt designed to provide precise specifications for developing the
+Yebissa application. This document contains machine-optimized instructions with clear parameter
+
+definitions and implementation requirements for maximum clarity and development efficiency.
+
+Development Parameters
+
+Parameter Value
+
+Project Type Mobile Application
+
+Platform Android (Priority)
+
+Optimization Target Low-end Android devices with minimal resources
+
+Primary Language French only
+
+Network Conditions intermittent 2G/3G in urban African setting
+
+Target User Congolese citizens with varying levels of technical literacy
+
+Code Standards Clean architecture with performance optimization
+Author & Origin
+
+e Author & Owner: Adonaï D. MOUZITA MATONDO (alias DrSmoke)
+
+e Genesis: À personal initiative born from observing Congolese society as an active citizen. After
+witnessing numerous preventable injustices, abuses, and accidents going unreported due to lack of
+proper channels, | conceived Yebissa as a solution.
+
+Project Purpose
+The project exists because:
+e Citizens deserve a digital voice
+
+e Silence should not cover injustices
+
+e A smartphone can become a powerful tool for civic vigilance
+
+Name Origin
+
+"“Yebissa” comes from Lingala language, meaning "make known’ or "inform." It's not just a name but a
+call to civic consciousness—an invitation to witness, alert, and act. The project aims to equip every
+Congolese citizen, young or adult, with the means to alert, testify, and protect their community.
+
+Long-Term Vision
+With citizen and authority support, Yebissa could become a reference tool for:
+
+e Urban management
+e Security monitoring
+e Public maintenance
+
+e Free expression of citizens
+
+This represents authentic African civic technology—locally born but globally minded.
+
+Business Model
+
+Revenue Source Details
+
+Voluntary Donations Mobile Money, PayPal, in-app donations
+
+Community Announcements City hall notices, deaths, neighborhood events
+
+Yebissa Pro Professional version for institutions with management tools
+GENERAL PRESENTATION
+
+e Application Name: Yebissa ("Make known" in Lingala)
+e Type: Android Mobile Application
+e Target Audience: Congolese citizens aged 12 and above
+
+e Objective: Enable citizens to report incidents, facts, or anomalies in their immediate environment,
+
+either anonymously or with identification
+
+MAIN FEATURES
+
+Reporting System
+
+e Selection of report type (see categories list)
+
+Text description input
+
+Optional photo addition (mandatory for certain types)
+
+Mandatory automatic geolocation (GPS coordinates / Google Maps)
+
+Choice between anonymous or identified reporting
+
+Report Consultation
+e Filtering by category, geographical area (city, municipality, neighborhood)
+e Interactive map with pins
+
+e News feed (chronological list of latest reports)
+
+Smart Notifications
+e Different sounds for emergencies (serious events) vs. routine information
+e Manual activation/deactivation of notifications and sounds
+
+e Automatic prioritization system based on severity and user preferences
+
+Accounts and Anonymity
+e No account required to report or consult
+e Google sign-in option for commenting
+
+e Choice to display name or comment anonymously
+
+Language
+° Fr French only
+
+e No language selection needed (application will be exclusively in French)
+
+Community Validation
+e _Ability to confirm a report (community voting)
+e Sensitive reports (e.g. abuse, accusations) must be confirmed by 3-5 users before public publication
+
+e Automated moderation system + human moderation (optional)
+
+Community Announcements
+e Useful information: deaths, municipal activities, public messages
+
+e Notifications based on user type and location
+
+REPORT CATEGORIES
+
+Infrastructure & Services
+
+e Fallen electrical cable
+
+Broken pipe / water leak
+
+Water shortage / outage
+
+Lack of public lighting
+
+e Fire
+
+Roads & Environment
+e Potholes
+
+e Beginning erosion
+
+e Flooding
+
+e_lllegal dumping
+Security & Crime
+e _Kuluna (street gangs)
+° Theft / lost item
+e Police abuse
+
+e Illegal activity
+
+Justice & Rights
+
+e Corruption
+
+e Blackmail
+
+e Domestic violence
+
+e Harassment
+
+Health & Consumption
+e Expired products
+
+e Questionable hygiene
+
+SUGGESTED TECHNIQUES & TECHNOLOGIES
+
+Element Recommended Technology
+
+Language Flutter
+
+Backend Firebase / Supabase
+
+Geolocation Google Maps API
+
+Notifications Firebase Cloud Messaging + differentiated sounds
+Multilingual Flutter Intl (18n)
+
+Database Firestore or PostgreSQL
+
+Security Anonymization, GDPR-like protocols
+
+ADDITIONAL CONSIDERATIONS
+
+e Free application, no intrusive advertising
+e Symbolic donations accepted to support the project
+e Strict respect for privacy (no unnecessary tracking)
+
+e_Intuitive interface for young people and less literate individuals (icons, audio, clean design)
+
+DEPLOYMENT OBJECTIVES
+
+e Functional multilingual MVP
+
+e Test launch in selected communes of Kinshasa
+e Extension to other cities after user feedback
+
+PRACTICAL USE CASES (USER STORIES)
+
+Case 1: Reporting Police Abuse
+
+Sarah, 19, witnesses a brutal police interaction in her neighborhood. She opens Yebissa, selects "Police
+Abuse," discreetly takes a photo, and activates automatic geolocation. She chooses anonymity. After 4
+community validations, the report becomes publicly visible. À municipal authority responds within the
+
+app.
+
+Case 2: Water Leak in the Street
+
+Mr. Luyeye notices a significant water leak from a damaged pipe. He launches the app, selects the "Water
+Leak" category, takes a photo, and sends the report. The water distribution service is notified and repairs
+within 24 hours. The status changes to "resolved."
+
+Case 3: Found Lost Object
+
+Junior, 14, finds a school bag in a taxi. Using Yebissa, he publishes a message with a photo. The owner
+contacts him and recovers her bag. The report is then marked as "resolved" and archived,.
+
+DETAILED TECHNICAL SPECIFICATIONS
+
+User Experience Flow
+
+1. First Launch
+e Language selection (or automatic detection)
+
+e Brief tutorial (skippable)
+e No mandatory account creation
+
+e Permission requests: location, camera, storage, notifications
+
+2. Home Screen
+
+e Large "Report" button at center/bottom
+e Map view showing nearby reports (default radius: 5km)
+e_List view option for reports
+e Filter options visible
+e Community announcement banner (collapsible)
+3. Report Creation Process
+e Step 1: Select category (visual grid with icons)
+e Step 2: Add description (voice input option available)
+e Step 3: Attach photo(s) - up to 3 images
+e Step 4: Confirm location (map with draggable pin)
+e Step 5: Choose anonymity level
+
+e Step 6: Submit (with connection check and offline capability)
+
+4. Report Viewing
+e_Individual report view with:
+
+e Category icon and color coding
+e Description
+
+e Photos (expandable)
+
+e Location on mini-map
+
+e Timestamp
+
+e Status indicator
+
+e Confirmation count
+
+e Comment section (if enabled)
+
+5. Notification Center
+e Sorted by proximity and urgency
+
+e Clear visual distinction between emergency and regular notifications
+e Option to mark as read/dismiss
+
+e _Follow-up option for reports
+
+Backend Requirements
+
+1. Data Structure
+e Reports collection with:
+e Unique ID
+
+e Category
+
+e Description
+
+e Media URLs
+
+e Coordinates
+
+e Timestamp
+
+e Reporter ID (anonymized if requested)
+e Status
+
+e Confirmation count
+
+e Comment references
+
+e Users collection with:
+
+e Anonymous ID (for non-registered)
+
+e Profile data (for registered)
+e Report history
+
+e Reliability score
+e Community announcements collection
+
+2. API Endpoints
+
+e Create report
+
+e Update report status
+
+e Confirm report
+
+e Comment on report
+e_Fetch reports (with filtering)
+e User authentication
+
+e Profile management
+
+e Community announcement management
+
+3. Security Requirements
+e End-to-end encryption for sensitive reports
+
+e Personal data anonymization
+e Rate limiting to prevent abuse
+e Report validation mechanisms
+
+e Content moderation systems
+
+Mobile App Technical Requirements
+
+1. Performance Optimization
+e Offline functionality
+
+e Low data usage mode
+e Battery optimization
+e Cached map data
+
+2. Accessibility Features
+e Screen reader compatibility
+
+e Voice commands
+e High contrast mode
+e Variable text size
+e Audio descriptions
+3. Map Implementation
+e _Clustering for dense report areas
+
+e Custom markers by category
+e Heat map option for problem density
+
+e Offline map caching
+
+4. Media Handling
+e mage compression before upload
+
+e Optional metadata stripping for privacy
+e Secure storage of sensitive media
+
+e _Blurring option for faces/identifying features
+
+5. Notification System
+e Proximity-based alerts
+
+e Category-based subscriptions
+e Quiet hours setting
+e Critical alerts override
+
+e Custom sound profiles
+
+IMPLEMENTATION PHASES
+
+Phase 1: Core Development (8 weeks)
+e Basic UI/UX implementation
+e Report creation and viewing
+e Mapintegration
+e Account system
+
+e French language implementation
+
+Phase 2: Enhanced Features (6 weeks)
+e Community validation system
+e Notification systems
+e Media handling improvements
+e Offline capabilities
+
+e Performance optimization
+
+Phase 3: Full Implementation (6 weeks)
+e Community announcements
+
+e Advanced filtering
+e Statistical dashboards
+
+e Moderation tools
+e Performance optimization
+
+Phase 4: Testing & Refinement (4 weeks)
+e User testing in selected communes
+
+e Performance testing
+
+Security auditing
+
+Bug fixing
+
+Feature refinement
+
+TEST DEPLOYMENT STRATEGY
+
+1. Initial deployment to 3-5 communes in Kinshasa
+
+2. Focus group testing with diverse user groups:
+e Youth (12-18)
+
+e Young adults (19-30)
+e Adults (31+)
+e Less tech-sawvy users
+
+e Local authorities
+
+3. Metrics to track:
+e User adoption rate
+
+e Report creation frequency
+e Validation rate
+e Resolution rate
+e App performance metrics
+
+e Crash reports
+
+4. Feedback collection through:
+e_In-app feedback form
+
+e Community meetings
+e Usage analytics
+
+e Performance monitoring
+
+CRITICAL SUCCESS FACTORS
+
+1. Simplicity: App must be usable by individuals with limited technical literacy
+2. Trust: System must maintain anonymity where promised
+
+3. Reliability: Reports must be accurately geolocated and categorized
+4. Responsiveness: App must function on low-end Android devices
+
+5. Impact: Visible resolution of reported issues to maintain user engagement
+
+ETHICAL CONSIDERATIONS
+
+1. Protection of vulnerable reporters
+
+2. Prevention of false reporting
+
+3. Data minimization principles
+
+4. Transparency in moderation decisions
+
+5. Equitable access across socioeconomic divides
+
+PERFORMANCE & OPTIMIZATION REQUIREMENTS
+
+Critical Performance Metrics
+
+1. Launch Time
+e Cold start: < 3 seconds on target devices
+
+e_Warm start: < 1 second on target devices
+
+2. Battery Consumption
+e Background: < 0.5% per hour
+
+e Active use: < 5% per hour with map
+
+e Location tracking: Optimized polling intervals
+
+3. Storage Efficiency
+e APK size: < 25MB target (absolute maximum 30MB)
+
+e Local data: < 50MB for cache and local storage
+
+e Auto-clearing of resolved reports > 30 days old
+
+4. Network Optimization
+
+e Request batching for non-urgent data
+
+e Compressed payloads (gzip)
+
+e Adaptive quality for image uploads based on network conditions
+
+e Maximum payload size: 500KB per report (including compressed images)
+5. Memory Usage
+
+e Maximum heap usage: 80MB
+
+e No memory leaks
+
+e _Proper resource disposal
+
+e Background process minimal footprint
+Low-End Device Adaptations
+
+1. Graphic Optimizations
+e Simplified UI rendering for <2GB RAM devices
+
+e Reduced animation complexity
+e Vector graphics preferred over raster
+
+e Map loading in tiles with progressive quality
+
+2. Offline-First Architecture
+e Complete functionality without internet connection
+
+e Background sync when connection available
+e Queue system for outgoing reports/updates
+
+e Local storage with SQLite for offline data
+
+3. Power-Saving Mechanisms
+e Reduced location polling when battery < 20%
+
+e Optional power-saving mode
+e Intelligent wake locks
+
+e Deferred processing of non-critical tasks
+
+4. Connection-Aware Features
+e Adaptive content loading based on connection quality
+
+e_ Preemptive caching of map data for frequent locations
+e Graceful degradation of features in poor network conditions
+
+e Connection quality indicator with recommendations
+
+IMPLEMENTATION GUIDANCE FOR OPTIMAL CODE PERFORMANCE
+
+Database Structure Design
+// Pseudocode schema for optimal database design
+Table Reports {
+id: UUID [primary key]
+category_id: INT [indexed]
+description: TEXT
+media_urls: JSON // Array of compressed image URLS
+coordinates: POINT [indexed, spatial index]
+timestamp: DATETIME [indexed]
+reporter_id: UUID [indexed, nullable]
+anonymous: BOOLEAN
+status: ENUM('pending', ‘validating', ‘active', ‘resolved', ‘archived'}) [indexed]
+confirmation_count: INT
+urgency_level: INT [indexed]
+// Denormalized fields for query optimization
+region_id: INT [indexed]
+city_id: INT [indexed]
+district_id: INT [indexed]
+
+Table Users {
+id: UUID [primary key]
+auth_provider: ENUM('google', ‘anonymous') [indexed]
+display_ name: VARCHAR(50) [nullable]
+profile data: JSON [nullable]
+device token: VARCHAR(255) [indexed, nullable]
+reliability_ score: FLOAT
+created _ at: DATETIME
+last_active: DATETIME [indexed]
+
+Table Confirmations {
+report_id: UUID [primary key, ref: > Reports.id]
+user_id: UUID [primary key, ref: > Users.id]
+timestamp: DATETIME
+
+indexes {
+(report_id, user _ id) [unique]
+
+Table Comments {
+id: UUID [primary key]
+report_id: UUID [ref: > Reports.id, indexed]
+user _id: UUID [ref: > Users.id, indexed]
+content: TEXT
+timestamp: DATETIME
+anonymous: BOOLEAN
+
+Table Announcements {
+id: UUID [primary key]
+title: VARCHAR(180)
+content: TEXT
+media_urls: JSON [nullable]
+region_id: INT [indexed, nullable]
+city_id: INT [indexed, nullable]
+district_id: INT [indexed, nullable]
+created_at: DATETIME [indexed]
+expires_at: DATETIME [indexed]
+urgency_level: INT [indexed]
+
+API Endpoint Optimization
+// Pseudocode for efficient API design
+
+// GET reports with pagination, filtering, and spatial queries
+GET /api/vi/reports
+QueryParams {
+lat: FLOAT
+ing: FLOAT
+radius: INT (meters)
+category: INT[]
+status: STRING[]
+page: INT
+per_page: INT (max: 50)
+since: DATETIME
+}
+Response {
+reports: REPORTI[]
+pagination: PAGINATION METADATA
+
+// POST optimized for minimal payload size
+POST /api/vi/reports
+Body {
+category_id: INT
+description: STRING
+media: BASE64_IMAGE[] (max: 3, pre-compressed client-side)
+coordinates: {lat: FLOAT, Ing: FLOAT}
+anonymous: BOOLEAN
+}
+Response {
+id: UUID
+status: STRING
+
+// Batched operations for better network efficiency
+POST /api/v1/batch
+Body {
+operations: [
+{
+method: STRING (GET|POST|PUT |DELETE)
+endpoint: STRING
+body: OBJECT
+
+}
+
+Response {
+results: RESPONSEI]
+}
+
+Frontend Performance Optimizations
+dart
+// Pseudocode for efficient Flutter implementation
+
+// Lazy loading and virtualized Lists
+class ReportList extends StatelessWidget {
+@override
+Widget build(BuildContext context) {
+return ListView.builder(
+// Virtual scrolling for memory efficiency
+itemCount: reports.length,
+itemBuilder: (context, index) {
+// Only build visible items
+if (index >= visibleRange.start && index <= visibleRange.end) {
+return ReportCard(report: reports[index]);
+}
+// Return placeholder for non-visible items
+return SizedBox(height: estimatedltemHeight) ;
+
+»5
+
+// Image optimization
+Widget optimizedImage(String url) {
+return CachedNetworkImage(
+
+imageUrl: url,
+
+// Progressive Loading
+
+progressindicatorBuilder: (context, url, progress) => CircularProgressIndicator(value: prog
+
+// Error handling
+
+errorWidget: (context, url, error) => Icon(Icons.error),
+
+// Memory caching options
+
+cacheManager: customCacheManager,
+
+// Placeholder
+
+placeholder: (context, url) => ShimmerLoading(},
+
+);
+
+// Map optimization
+Widget optimizedMap(}) {
+return GoogleMap(
+// Pre-fetch map tiles for user's area
+initialCameraPosition: CameraPosition(
+target: userLocation,
+zoom: 15.0,
+)
+// Marker clustering for performance
+markers: _createClusteredMarkers(),
+// Cache map when available
+
+cacheEnabled: true,
+
+// Reduce render quality when moving
+liteModeEnabled: batteryLow,
+
+// Custom marker factory for efficient rendering
+
+markerBuilder: (context, markerId) => _buildEfficientMarker(markerïId),
+
+):
+
+// Background data sync with work manager
+void setupBackgroundSync() {
+WorkManager().registerPeriodicTask(
+“sync-reports",
+“syncReports",
+frequency: Duration(hours: 1),
+constraints: Constraints(
+networkType: NetworkType.connected,
+batteryNotLow: true,
+)
+existingWorkPolicy: ExistingWorkPolicy.replace,
+
+);
+
+Security Implementation Examples
+dart
+// Pseudocode for security implementations
+
+// Data encryption for sensitive reports
+class SecureStorage {
+
+static Future<void> saveReport(Report report) async {
+// Generate unique encryption key
+
+final key = await _generateEncryptionKey();
+
+// Encrypt data
+final encrypted = await _encrypt(jsonEncode(report.toJson()), key);
+
+// Store encrypted data and key reference
+await _storage.write(key: ‘report_${report.id}', value: encrypted);
+await _keyManager.storeKey(report.id, key);
+
+static Future<Report> getReport(String id) async {
+// Retrieve encrypted data
+final encrypted = await _storage.read(key: ‘report_$id');
+
+// Retrieve decryption key
+final key = await _keyManager.getKey(id);
+
+// Decrypt data
+final decrypted = await _decrypt(encrypted, key);
+
+// Parse and return
+return Report.fromJson(jsonDecode(decrypted));
+
+// Rate L'imiting implementation
+
+class RateLimiter {
+static final _instance = RateLimiter._internal();
+factory RateLimiter() => _instance;
+RateLimiter._internal();
+
+final Map<String, Queue<DateTime>> _requestTimestamps = {};
+
+bool checkLimit(String actionType, {int maxRequests = 5, Duration window = const Duration(mir
+final now = DateTime.now();
+
+// Initialize queue if not exists
+_requestTimestamps[actionType] ??= Queue<DateTime>();
+
+// Remove timestamps outside window
+while (_requestTimestamps[actionType]!.isNotEmpty &&
+now.difference(_requestTimestamps[actionType]!.first) > window) {
+_requestTimestamps[actionType]!.removeFirst();
+
+7/7 Check if under Limit
+if (_requestTimestamps[actionType]!.length < maxRequests) {
+_requestTimestamps[actionType]!.add(now);
+
+return true;
+
+return false;
